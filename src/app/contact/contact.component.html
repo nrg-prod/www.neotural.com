@@ -1,3 +1,4 @@
+<app-detailsheader></app-detailsheader>
 <div class="clearfix"></div> 
   <div class="page_title"> 
     <div class="container"> 
@@ -56,9 +57,9 @@
             </div>
 
             <div class="form-control">
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" [(ngModel)]="this.model.email" 
-                    #email="ngModel" autocomplete="off" (ngModelChange)="getValidation()" required>
+                <label for="email_ID"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email_ID" id="email_ID" [(ngModel)]="this.model.email_ID" 
+                    #email_ID="ngModel" autocomplete="off" (ngModelChange)="getValidation()" required>
                 <div *ngIf="phonenumberoremail">
                     <span class="spanerror">
                         PhoneNumber or Email is required
@@ -67,9 +68,9 @@
             </div>
             
             <div class="form-control">
-                <label for="msg"><b>Message</b></label>
-                <textarea type="text" placeholder="Enter Message" name="msg" id="msg" [(ngModel)]="this.model.msg" 
-                #msg="ngModel" autocomplete="off"></textarea>
+                <label for="message"><b>Message</b></label>
+                <textarea type="text" placeholder="Enter Message" name="message" id="message" [(ngModel)]="this.model.message" 
+                #message="ngModel" autocomplete="off"></textarea>
             </div>
             
             <div class="form-control">

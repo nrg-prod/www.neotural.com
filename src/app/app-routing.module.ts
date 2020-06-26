@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsheaderComponent } from './detailsheader/detailsheader.component';
 import { FooterComponent } from './footer/footer.component';
+import { CareerComponent } from './career/career.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'detailsheader', component: DetailsheaderComponent },
   { path: 'footer', component: FooterComponent },
+  { path: 'career', component: CareerComponent },
 
   { path: '**', redirectTo: '/home' }
 

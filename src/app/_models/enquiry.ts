@@ -8,4 +8,6 @@
 	country: string;
 	enquirytype: string;
 	status: string;
+	username: string;
+	password: string;
 }

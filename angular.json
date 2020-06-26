@@ -119,10 +119,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "NeoturalFrontEnd",
-  "cli": {
-    "analytics": "5e759a29-4753-48fe-9e7f-a9bea55408ea"
-  }
+    }},
+  "defaultProject": "NeoturalFrontEnd"
 }

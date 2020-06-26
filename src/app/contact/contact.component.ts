@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
   }
 
   getValidation(){
-    if(this.model.email != null || this.model.phonenumber != null){
+    if(this.model.email_ID != null || this.model.phonenumber != null){
       this.phonenumberoremail = false;
     }else{
       this.phonenumberoremail = true;
@@ -37,7 +37,7 @@ export class ContactComponent implements OnInit {
   }
 
   saveEnquiry(){
-    if(this.model.email != null || this.model.phonenumber != null){
+    if(this.model.email_ID != null || this.model.phonenumber != null){
       this.phonenumberoremail = false;
 
       this.enquiryService.saveEnquiry(this.model) 
@@ -46,6 +46,7 @@ export class ContactComponent implements OnInit {
             this.showMsg = true;
             this.showerrorMsg = false;
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            this.addEmployeeClose();
           },
           error => {
             this.showMsg = false;
@@ -62,8 +63,8 @@ export class ContactComponent implements OnInit {
   addEmployeeClose(){
     this.model.name = '';
     this.model.phonenumber = '';
-    this.model.email = '';
-    this.model.msg = '';
+    this.model.email_ID = '';
+    this.model.message = '';
     this.model.enquirytype = '';
     this.model.country = '';
   }

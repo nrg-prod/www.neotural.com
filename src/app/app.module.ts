@@ -7,7 +7,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { EnquiryService } from './_services/index';
+import { EnquiryService, ServerURL } from './_services/index';
+import { AlertComponent } from './_directives/index';
+import { fakeBackendProvider } from './_helpers/index';
+import { JwtInterceptor } from './_helpers/index';
+import { AuthGuard } from './_guards/index';
 
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -19,10 +23,13 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsheaderComponent } from './detailsheader/detailsheader.component';
 import { FooterComponent } from './footer/footer.component';
+import { CareerComponent } from './career/career.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
+
     AboutComponent,
     ContactComponent,
     JobseekerRegisterComponent,
@@ -32,7 +39,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     HomeComponent,
     DetailsheaderComponent,
-    FooterComponent
+    FooterComponent,
+    CareerComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,17 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
   ],
   providers: [
+    AuthGuard,
     EnquiryService,
+    ServerURL,
+
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+    
+    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
