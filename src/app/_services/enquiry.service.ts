@@ -6,7 +6,7 @@ import { Enquiry } from '../_models/index';
 export class EnquiryService {    
     suburl:string;
 
-    private commonURL = "http://localhost:8095/erp/enquiry/";
+    private commonURL = "https://login.neotural.com/erp/enquiry/";
 	
     constructor(private http: HttpClient) { }
 
